@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesService } from './service/employees.service';
+import { ModalModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
+/*import { MaterialModule } from './material.module';*/
 
 
 @NgModule({
@@ -14,6 +17,9 @@ import { EmployeesService } from './service/employees.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ModalModule.forRoot(),
+    FormsModule,
+    /*MaterialModule,*/
     AppRoutingModule
   ],
   providers: [EmployeesService],
