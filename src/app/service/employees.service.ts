@@ -13,8 +13,19 @@ export class EmployeesService {
 
  	getAllEmployees(): Observable<any[]>{
     	return 	this.http.get(this._url + "/employees.json")
-                    .catch(this.errorHandler);
+    			.catch(this.errorHandler);
 	}
+
+	getEmployeeAssessments(empId): Observable<any[]> {
+        return 	this.http.get(this._url + "/user-assessment-list.json")
+        		.catch(this.errorHandler);
+    }
+
+    // utilities
+    getPositionList(): Observable<any[]> {
+        return 	this.http.get(this._url + "/employee-position.json")
+        		.catch(this.errorHandler);
+    }
 
 	errorHandler(error: HttpErrorResponse){
 	return Observable.throw(error.message || "Server Error");
